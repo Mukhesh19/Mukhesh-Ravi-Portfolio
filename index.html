@@ -1,0 +1,1232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Analyst Portfolio</title>
+  <!-- Include Bootstrap -->
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    /* Gradient Background */
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    .hero-section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(120deg, #0d3b66, #faa916, #ff595e, #1982c4, #8ac926, #6a4c93);
+      background-size: 400% 400%;
+      animation: gradientBG 8s infinite;
+      color: white;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    /* Floating Bubbles */
+    .bubble {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.8;
+      animation: floatUp 12s linear infinite;
+      background-color: rgba(255, 255, 255, 0.2);
+    }
+
+    @keyframes floatUp {
+      from {
+        transform: translateY(100vh);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(-10%);
+        opacity: 1;
+      }
+    }
+
+    /* Generate Random Bubbles */
+    .bubble:nth-child(1) { width: 15px; height: 15px; left: 10%; animation-duration: 14s; }
+    .bubble:nth-child(2) { width: 10px; height: 10px; left: 20%; animation-duration: 10s; }
+    .bubble:nth-child(3) { width: 8px; height: 8px; left: 30%; animation-duration: 12s; }
+    .bubble:nth-child(4) { width: 12px; height: 12px; left: 40%; animation-duration: 15s; }
+    .bubble:nth-child(5) { width: 9px; height: 9px; left: 50%; animation-duration: 11s; }
+    .bubble:nth-child(6) { width: 7px; height: 7px; left: 60%; animation-duration: 9s; }
+    .bubble:nth-child(7) { width: 6px; height: 6px; left: 70%; animation-duration: 13s; }
+    .bubble:nth-child(8) { width: 5px; height: 5px; left: 80%; animation-duration: 8s; }
+
+    /* Navigation Bar */
+    .navbar {
+      background-color: rgba(0, 0, 0, 0.8);
+      padding: 0.7rem 1rem;
+    }
+
+    .navbar a {
+      color: white;
+      text-transform: uppercase;
+      font-size: 0.9rem;
+      margin-right: 20px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .navbar a:hover {
+      color: #1ad7c0;
+    }
+
+    .navbar-brand {
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: #ff9b11;
+    }
+
+    /* Hero Content */
+    .hero-title {
+      font-size: 5rem;
+      font-weight: normal;
+      margin: 0 0 20px;
+    }
+
+    .hero-tagline {
+      font-size: 1.8rem;
+      margin: 20px 0 40px;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      animation: typewriter 3s steps(30) forwards;
+    }
+
+    @keyframes typewriter {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    /* Social Media Icons */
+    .social-icons {
+      margin-top: 30px;
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .social-icons a {
+      display: inline-block;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    .social-icons img {
+      width: 30px;
+      height: 30px;
+    }
+
+    .about-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid white;
+    border-radius: 15px; /* Adjust this value for more or less curve */
+    background-color: transparent;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 60px; /* Adjust this value to move the button lower */
+  }
+
+  .about-btn:hover,
+  .about-btn:active {
+    background-color: white;
+    color: black;
+  }
+
+    /* About Section Styling */
+    .about-section {
+  padding: 80px 20px;
+  background-color: #f9f9f9;
+  color: #333;
+  text-align: center;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.about-photo {
+  flex: 1;
+  text-align: center;
+}
+
+.about-photo img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.about-text-container {
+  flex: 2;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.about-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.about-text {
+  font-size: 1.2rem;
+  line-height: 1.8;
+}
+
+.resume-button {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  color: #000;
+  border: 2px solid #000;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.resume-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+    .project-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center
+}
+
+     .project-card {
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+  }
+
+  .project-card:hover {
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+  }
+    </style>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar fixed-top">
+    <a class="navbar-brand" href="#">Mukhesh Ravi</a>
+    <div>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#resume">Certificates</a>
+      <a href="#about">Contact Me</a> 
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <!-- Floating Bubbles -->
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+    <div class="bubble"></div>
+
+    <h1 class="hero-title">Mukhesh Ravi</h1>
+    <p class="hero-tagline">Passionate about changing the world with data.</p>
+    
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+      <a href="https://github.com/Mukhesh19" target="_blank"><img src="https://img.icons8.com/material-outlined/50/000000/github.png" alt="GitHub"></a>
+      <a href="https://www.linkedin.com/in/mukheshravi/" target="_blank"><img src="https://img.icons8.com/ios-filled/50/000000/linkedin.png" alt="LinkedIn"></a>
+      <a href="https://www.instagram.com/mukheshrv/" target="_blank"><img src="https://img.icons8.com/material-rounded/50/000000/instagram-new.png" alt="Instagram"></a>
+      <a href="https://tableau.com/" target="_blank"><img src="https://img.icons8.com/ios-filled/50/000000/tableau-software.png" alt="Tableau"></a>
+    </div>
+
+    <!-- About Me Button -->
+    <a href="#about" class="about-btn">About Me</a>
+  </section>
+
+ <!-- About Section -->
+<section id="about" class="about-section">
+  <div class="about-content">
+    <div class="about-photo">
+      <img src="Untitled design (3).png" alt="Mukhesh Ravi">
+    </div>
+    <div class="about-text-container">
+      <h2 class="about-title">About Me</h2>
+      <p class="about-text">
+        Hello! I'm Mukhesh Ravi, a data analyst with a passion for uncovering insights from data. I specialize in using advanced analytics techniques to solve real-world problems. My journey in data analytics is fueled by curiosity and a desire to make a difference in the world through actionable insights.
+      </p>
+      <a href="your-google-drive-link" class="resume-button" target="_blank">Resume</a>
+    </div>
+  </div>
+</section>
+  
+<!-- Projects Section -->
+<section id="projects" class="projects-section py-5" style="background-color: #f0f8ff;">
+  <div class="container">
+    <h2 class="project-title">My Projects</h2>
+    <div id="projectCarousel" class="carousel slide" data-ride="carousel">
+      <!-- Carousel Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#projectCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#projectCarousel" data-slide-to="1"></li>
+      </ol>
+      
+      <!-- Carousel Items -->
+      <div class="carousel-inner">
+        <!-- First Set of 3 Cards -->
+        <div class="carousel-item active">
+          <div class="row">
+            <!-- Project Card 1 -->
+<div class="col-md-4">
+  <div class="card project-card">
+    <img src="image1.png" class="card-img-top" alt="Project 1 Image">
+    <div class="card-body">
+      <h5 class="card-title">Revolutionizing Recruitment: Enhanced Machine Learning Models for Bias Mitigation & Efficiency </h5>
+      <p class="card-text">A brief description of Project 1. Built using Bootstrap and JavaScript.</p>
+      <div class="d-flex justify-content-between">
+        <button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#overviewModal1">Overview</button>
+        <a href="https://github.com/yourrepo/project1" class="btn btn-outline-secondary btn-sm">Repo</a>
+      </div>
+      <hr>
+      <p class="mb-1"><strong>Languages:</strong> JavaScript: 50%, SCSS: 30%, HTML: 20%</p>
+      <p class="mb-1"><strong>Updated:</strong> December 24, 2024</p>
+    </div>
+  </div>
+</div>
+
+<!-- Overview Modal -->
+<div class="modal fade" id="overviewModal1" tabindex="-1" role="dialog" aria-labelledby="overviewModalLabel1" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="overviewModalLabel1">Project Overview</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6>Research Question</h6>
+        <p>What is the main research question?</p>
+        <h6>Findings</h6>
+        <p>What are the key findings?</p>
+        <h6>Results</h6>
+        <p>What are the results of the analysis?</p>
+        <!-- Add more sections as needed -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+            <!-- Project Card 2 -->
+            <div class="col-md-4">
+              <div class="card">
+                <img src="image2.jpg" class="card-img-top" alt="Project 2 Image">
+                <div class="card-body">
+                  <h5 class="card-title">Artificial Intelligence in Retail: Smarter Demand, Better Inventory</h5>
+                  <p class="card-text">A brief description of Project 2. Built using React and SCSS.</p>
+                  <div class="d-flex justify-content-between">
+                    <a href="#" class="btn btn-outline-primary btn-sm">Clone Project</a>
+                    <a href="#" class="btn btn-outline-secondary btn-sm">Repo</a>
+                  </div>
+                  <hr>
+                  <p class="mb-1"><strong>Languages:</strong> JavaScript: 60%, SCSS: 25%, HTML: 15%</p>
+                  <p class="mb-1"><strong>Updated:</strong> November 20, 2024</p>
+                </div>
+              </div>
+            </div>
+            <!-- Project Card 3 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Project 3</h5>
+                  <p class="card-text">A brief description of Project 3. Built using Python and Django.</p>
+                  <div class="d-flex justify-content-between">
+                    <a href="#" class="btn btn-outline-primary btn-sm">Clone Project</a>
+                    <a href="#" class="btn btn-outline-secondary btn-sm">Repo</a>
+                  </div>
+                  <hr>
+                  <p class="mb-1"><strong>Languages:</strong> Python: 80%, HTML: 20%</p>
+                  <p class="mb-1"><strong>Updated:</strong> October 15, 2024</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Second Set of 3 Cards -->
+        <div class="carousel-item">
+          <div class="row">
+            <!-- Project Card 4 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Project 4</h5>
+                  <p class="card-text">A brief description of Project 4. Built using Flask and Bootstrap.</p>
+                  <div class="d-flex justify-content-between">
+                    <a href="#" class="btn btn-outline-primary btn-sm">Clone Project</a>
+                    <a href="#" class="btn btn-outline-secondary btn-sm">Repo</a>
+                  </div>
+                  <hr>
+                  <p class="mb-1"><strong>Languages:</strong> Python: 70%, HTML: 30%</p>
+                  <p class="mb-1"><strong>Updated:</strong> September 10, 2024</p>
+                </div>
+              </div>
+            </div>
+            <!-- Project Card 5 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Project 5</h5>
+                  <p class="card-text">A brief description of Project 5. Built using Vue.js and Tailwind CSS.</p>
+                  <div class="d-flex justify-content-between">
+                    <a href="#" class="btn btn-outline-primary btn-sm">Clone Project</a>
+                    <a href="#" class="btn btn-outline-secondary btn-sm">Repo</a>
+                  </div>
+                  <hr>
+                  <p class="mb-1"><strong>Languages:</strong> JavaScript: 65%, CSS: 25%, HTML: 10%</p>
+                  <p class="mb-1"><strong>Updated:</strong> August 5, 2024</p>
+                </div>
+              </div>
+            </div>
+            <!-- Project Card 6 -->
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title">Project 6</h5>
+                  <p class="card-text">A brief description of Project 6. Built using Angular and Bootstrap.</p>
+                  <div class="d-flex justify-content-between">
+                    <a href="#" class="btn btn-outline-primary btn-sm">Research Question</a>
+                    <a href="#" class="btn btn-outline-secondary btn-sm">Repo</a>
+                  </div>
+                  <hr>
+                  <p class="mb-1"><strong>Languages:</strong> JavaScript: 70%, SCSS: 20%, HTML: 10%</p>
+                  <p class="mb-1"><strong>Updated:</strong> July 15, 2024</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Carousel Controls -->
+<a class="carousel-control-prev text-dark" href="#projectCarousel" role="button" data-slide="prev" style="font-size: 2rem; left: -160px;">
+    <span class="carousel-control-prev-icon bg-dark p-2 rounded-circle" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+</a>
+<a class="carousel-control-next text-dark" href="#projectCarousel" role="button" data-slide="next" style="font-size: 2rem; right: -160px;">
+    <span class="carousel-control-next-icon bg-dark p-2 rounded-circle" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+</a>
+    </div>
+  </div>
+</section>
+
+  <!-- Skills Section -->
+ <title>Skills Section</title></head>
+<body>
+    
+   <div class="section-title">Skills</div>
+
+    <div class="tabs">
+        <div class="tab active" onclick="openTab(event, 'technical-skills')">Technical Skills</div>
+        <div class="tab" onclick="openTab(event, 'soft-skills')">Soft Skills</div>
+    </div>
+
+    <div id="technical-skills" class="tab-content active">
+        <div class="skills-grid">
+            <div>
+                <div class="skill-category">Programming Languages</div>
+                <div class="skill-icons">
+                    <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="python1.png" alt="Python" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">Python</div>
+                        </div>
+                    </div>
+                    <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="R1.png" alt="R" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">R</div>
+                        </div>
+                    </div>
+                    <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="SQL1.png" alt="SQL" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">SQL</div>
+                        </div>
+                    </div>
+                   <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="javascript.png" alt="Javascript" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">Javascript</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           <div>
+                <div class="skill-category">Visualization Tools</div>
+                <div class="skill-icons">
+                    <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="tableau.png" alt="Tableau" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">Tableau</div>
+                        </div>
+                    </div>
+                    <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="powerbi.png" alt="Power BI" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">Power BI</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                
+            <div>
+                <div class="skill-category">ERP and Analytical Tools</div>
+                <div class="skill-icons">
+                <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="alteryx.png" alt="Alteryx" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">Alteryx</div>
+                        </div>
+                    </div>
+                  <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="sap.png" alt="SAP" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">SAP</div>
+                        </div>
+                    </div>
+                    <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="sas.png" alt="SAS" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">SAS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="skill-category">Cloud Platforms</div>
+                <div class="skill-icons">
+                    <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="azure.png" alt="Azure" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">Azure</div>
+                        </div>
+                    </div>
+                    <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="aws.png" alt="AWS" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">AWS</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+                <div class="skill-category">Database Management</div>
+                <div class="skill-icons">
+                    <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="mongodb.png" alt="MongoDB" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">MongoDB</div>
+                        </div>
+                    </div>
+                    <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="mysql.png" alt="mysql" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">MySQL</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="skill-category">Additional Tech Proficiencies</div>
+                <div class="skill-icons">
+                    <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="spark.png" alt="Apache Spark" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">Apache Spark</div>
+                        </div>
+                    </div>
+                  <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="vscode.png" alt="VS Code" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">Visual Studio Code</div>
+                        </div>
+                    </div>
+                  <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="html.png" alt="HTML" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">HTML</div>
+                        </div>
+                    </div>
+                    <div class="icon-container">
+                        <div class="icon-frame">
+                            <div class="front">
+                                <img src="officetools.png" alt="Office" style="width: 100%; height: 100%;">
+                            </div>
+                            <div class="back">Microsoft Office</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   <div id="soft-skills" class="tab-content">
+    <div class="word-cloud">
+        <span class="word" onclick="showDescription('Ability to analyze and evaluate data effectively.')">Critical Thinking</span>
+        <span class="word" onclick="showDescription('Conveying insights through compelling narratives.')">Data Storytelling</span>
+        <span class="word" onclick="showDescription('Maintaining precision and accuracy in all tasks.')">Attention to Detail</span>
+        <span class="word" onclick="showDescription('Clear and effective exchange of ideas.')">Communication</span>
+        <span class="word" onclick="showDescription('Approaching challenges with logical solutions.')">Problem-Solving</span>
+        <span class="word" onclick="showDescription('Collaborating efficiently within diverse teams.')">Teamwork</span>
+        <span class="word" onclick="showDescription('Providing detailed, actionable insights in reports.')">Thorough Reporting</span>
+        <span class="word" onclick="showDescription('Prioritizing and managing time effectively.')">Time Management</span>
+        <span class="word" onclick="showDescription('Flexibility to handle changing demands.')">Adaptability</span>
+        <span class="word" onclick="showDescription('Inspiring and guiding teams to success.')">Leadership</span>
+        <span class="word" onclick="showDescription('Organizing tasks and maintaining systematic processes.')">Organization & Version Control</span>
+    </div>
+    <div id="description-box" style="text-align: center; margin-top: 20px; font-size: 18px; font-weight: bold;"></div>
+</div>
+  
+<style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #007BFF;
+            border: 1px solid #ddd;
+            margin: 0 5px;
+            border-radius: 5px;
+        }
+
+        .tab.active {
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-gap: 20px;
+            padding: 20px;
+        }
+
+        .skill-category {
+            text-align: center;
+            font-size: 22px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .skill-icons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .icon-container {
+            width: 60px;
+            height: 60px;
+            perspective: 1000px;
+        }
+
+        .icon-frame {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.5s;
+        }
+
+        .icon-container:hover .icon-frame {
+            transform: rotateY(180deg);
+        }
+
+        .icon-frame .front,
+        .icon-frame .back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: bold;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .icon-frame .front {
+            background-color: #000000;
+            border: 3px solid #000000;
+        }
+
+        .icon-frame .back {
+            background-color: #007BFF;
+            color: white;
+            transform: rotateY(180deg);
+        }
+  .word-cloud {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 20px;
+}
+
+.word {
+    font-size: 18px;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.word:hover {
+    transform: scale(1.2);
+    background-color: #007BFF;
+    color: white;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 14px;
+    z-index: 10;
+}
+
+    </style>
+    <script>
+        function openTab(event, tabId) {
+            const tabs = document.querySelectorAll('.tab');
+            const contents = document.querySelectorAll('.tab-content');
+
+            tabs.forEach(tab => tab.classList.remove('active'));
+            contents.forEach(content => content.classList.remove('active'));
+
+            event.currentTarget.classList.add('active');
+            document.getElementById(tabId).classList.add('active');
+        }
+      function showDescription(skillDescription) {
+           const descriptionBox = document.getElementById('description-box');
+           descriptionBox.textContent = skillDescription;
+    }
+
+    </script>
+  
+<style>
+/* Larger card dimensions */
+.certification-card {
+  height: 360px;
+  width: 95%; /* Increase the card width for better visibility */
+  margin: 0 auto; /* Center the cards */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.certification-card:hover {
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.card-img-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.5);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .certification-card:hover .card-img-overlay {
+    opacity: 1;
+  }
+  
+/* Adjust the carousel controls (arrows) */
+.carousel-control-prev, .carousel-control-next {
+  width: 50px; /* Increase clickable area */
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+  width: 40px;
+  height: 40px;
+}
+
+#certificationsCarousel .carousel-control-prev,
+#certificationsCarousel .carousel-control-next {
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+#certificationsCarousel .carousel-control-prev {
+  left: -60px; /* Move prev arrow further left */
+}
+
+#certificationsCarousel .carousel-control-next {
+  right: -60px; /* Move next arrow further right */
+}
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var certificationModal = document.getElementById('certificationModal');
+    certificationModal.addEventListener('show.bs.modal', function (event) {
+      var button = event.relatedTarget;
+      var imageSrc = button.getAttribute('data-bs-image');
+      var modalImage = certificationModal.querySelector('#modalImage');
+      modalImage.src = imageSrc;
+    });
+  });
+</script>
+
+<!-- Certifications Section -->
+<section id="certifications" class="certifications-section py-5" style="background-color: #f9f9f9;">
+  <div class="container">
+    <h2 class="text-center mb-4">Certifications & Courses</h2>
+    <div id="certificationsCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row">
+            <div class="col-md-3">
+             <div class="card certification-card" data-bs-toggle="modal" data-bs-target="#certificationModal" data-bs-image="certification1.png">
+  <div class="card-img-overlay d-flex justify-content-center align-items-center">
+    <i class="bi bi-search" style="font-size: 2rem; color: white;"></i>
+  </div>
+  <img src="certification1.png" class="card-img-top" alt="Certification 1">
+  <div class="card-body">
+    <h5 class="card-title">Google Data Analytics</h5>
+    <p class="card-text">Description of Certification 1.</p>
+  </div>
+</div>
+            </div>
+            <div class="col-md-3">
+              <div class="card certification-card" data-bs-toggle="modal" data-bs-target="#certificationModal" data-bs-image="certification2.png">
+                <img src="certification2.png" class="card-img-top" alt="Certification 2">
+                <div class="card-body">
+                  <h5 class="card-title">Amazon Web Services Fundamentals</h5>
+                  <p class="card-text">Description of Certification 2.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card certification-card" data-bs-toggle="modal" data-bs-target="#certificationModal" data-bs-image="certification3.png">
+                <img src="certification3.png" class="card-img-top" alt="Certification 3">
+                <div class="card-body">
+                  <h5 class="card-title">Microsoft Power BI Data Analyst</h5>
+                  <p class="card-text">Description of Certification 3.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card certification-card" data-bs-toggle="modal" data-bs-target="#certificationModal" data-bs-image="certification4.png">
+                <img src="certification4.png" class="card-img-top" alt="Certification 4">
+                <div class="card-body">
+                  <h5 class="card-title">Microsoft Azure Data Fundamentals</h5>
+                  <p class="card-text">Description of Certification 4.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card certification-card" data-bs-toggle="modal" data-bs-target="#certificationModal" data-bs-image="Data Analyst 1.png">
+                <img src="Data Analyst 1.png" class="card-img-top" alt="Certification 5">
+                <div class="card-body">
+                  <h5 class="card-title">Data Analyst Associate</h5>
+                  <p class="card-text">Description of Certification 5.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card certification-card" data-bs-toggle="modal" data-bs-target="#certificationModal" data-bs-image="Data Scientist.png">
+                <img src="Data Scientist.png" class="card-img-top" alt="Certification 6">
+                <div class="card-body">
+                  <h5 class="card-title">Data Scientist Associate</h5>
+                  <p class="card-text">Description of Certification 6.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card certification-card" data-bs-toggle="modal" data-bs-target="#certificationModal" data-bs-image="Data Engineer.png">
+                <img src="Data Engineer.png" class="card-img-top" alt="Certification 7">
+                <div class="card-body">
+                  <h5 class="card-title">Data Engineer Associate</h5>
+                  <p class="card-text">Description of Certification 7.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card certification-card" data-bs-toggle="modal" data-bs-target="#certificationModal" data-bs-image="Java As Second Language-1.png">
+                <img src="Java As Second Language-1.png" class="card-img-top" alt="Certification 8">
+                <div class="card-body">
+                  <h5 class="card-title">Java As Second Language</h5>
+                  <p class="card-text">Description of Certification 8.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row">
+            <div class="col-md-3">
+              <div class="card certification-card">
+                <img src="path/to/certification9.png" class="card-img-top" alt="Certification 9">
+                <div class="card-body">
+                  <h5 class="card-title">Certification 9</h5>
+                  <p class="card-text">Description of Certification 9.</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="card certification-card">
+                <img src="path/to/certification10.png" class="card-img-top" alt="Certification 10">
+                <div class="card-body">
+                  <h5 class="card-title">Certification 10</h5>
+                  <p class="card-text">Description of Certification 10.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+       <!-- Carousel Controls -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#certificationsCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#certificationsCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- Modal -->
+<div class="modal fade" id="certificationModal" tabindex="-1" aria-labelledby="certificationModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="certificationModalLabel">Certification</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <img id="modalImage" src="" class="img-fluid" alt="Certification">
+      </div>
+    </div>
+  </div>
+</div>
+  
+<!-- Testimonial Section -->
+<section id="recommendations" class="py-5" style="background-color: #ffffff;">
+  <div class="container">
+    <h2 class="text-center mb-4">Recommendations </h2>
+    <div class="row justify-content-center">
+      <div class="col-md-8">
+        <div class="text-center shadow-lg p-4 rounded-3" style="background-color: #f8f9fa; border: 2px solid #007bff;">
+          <p class="fs-4" style="font-style: italic; color: #6c757d;">"Mukhesh brought creativity and a deep understanding of employee needs to every initiative, ensuring meaningful engagement that resonated with our team. His leadership skills shone brightly as he seamlessly managed multiple projects, rallied teams, and consistently delivered results that exceeded expectations.
+Beyond his technical capabilities, Mukhesh's ability to inspire others and foster a culture of collaboration truly set him apart. He was not just a leader but also a mentor to many, embodying empathy and professionalism in all interactions."</p>
+          <footer class="blockquote-footer mt-3">
+            <strong>[Sreenivaasar]</strong>, <cite title="TDCX Malaysia">[Manager, HR Business Partner/Company]</cite>
+          </footer>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+</section>
+
+<title>Contact Me</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* General Section Styling */
+    #get-in-touch {
+      background-color: #e8f5f8;
+      padding: 60px 0;
+    }
+
+    #get-in-touch h2 {
+      font-weight: bold;
+      color: #333;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    #get-in-touch .form-control {
+      border: 1px solid #ccc;
+      padding: 12px 20px;
+      border-radius: 8px; /* Rounded corners for input fields */
+    }
+
+    #get-in-touch .btn-primary {
+      background-color: #007bff;
+      border: none;
+      transition: background-color 0.3s ease;
+      border-radius: 20px; /* Rounded button */
+      padding: 10px 25px;
+    }
+
+    #get-in-touch .btn-primary:hover {
+      background-color: #0056b3;
+    }
+
+    /* Social Media Styling */
+    .social-icon {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #000; /* Black background */
+      color: #fff; /* White icon */
+      font-size: 20px;
+      text-align: center;
+      line-height: 50px; /* Center align the icon vertically */
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      text-decoration: none;
+    }
+
+    .social-icon:hover {
+      transform: scale(1.1);
+      background-color: #333; /* Darker black on hover */
+    }
+
+    .social-icon i {
+      vertical-align: middle;
+    }
+
+    /* Introductory Paragraph Styling */
+    #get-in-touch p {
+      font-size: 16px;
+      color: #333;
+      margin-bottom: 30px;
+      text-align: justify;
+    }
+
+    /* Social Media Container */
+    #get-in-touch ul {
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 15px;
+    }
+
+    #get-in-touch ul li {
+      display: inline;
+    }
+  </style>
+</head>
+<body>
+  <section id="get-in-touch">
+    <div class="container">
+      <h2>Contact Me</h2>
+      <div class="row" style="display: flex; justify-content: space-between; align-items: center;">
+        <!-- Contact Form -->
+        <div class="col-md-6" style="flex: 1; margin-right: 20px;">
+          <form>
+            <div class="mb-3">
+              <label for="name" class="form-label">Name</label>
+              <input type="text" class="form-control" id="name" placeholder="Your Name">
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" placeholder="Your Email">
+            </div>
+            <div class="mb-3">
+              <label for="message" class="form-label">Your Message</label>
+              <textarea class="form-control" id="message" rows="4" placeholder="Type your message here..."></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Send Message</button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="col-md-5" style="flex: 1;">
+          <!-- Introductory Paragraph -->
+          <p>
+            I'm currently looking for full-time Data Analysis, Data Science, or Machine Learning opportunities! 
+            If you know of any positions available, if you have any questions, or if you just want to say hi, 
+            please feel free to reach out to me.
+          </p>
+
+          <!-- Social Media Links -->
+          <ul>
+            <li>
+              <a href="mailto:example@gmail.com" class="social-icon" title="Email Me">
+                <i class="fas fa-envelope"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/yourgithub" class="social-icon" target="_blank" title="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com/in/yourlinkedin" class="social-icon" target="_blank" title="LinkedIn">
+                <i class="fab fa-linkedin"></i>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background: linear-gradient(90deg, #333, #444); color: #fff; padding: 20px 0; text-align: center;">
+  <div class="container">
+    <!-- Copyright Text -->
+    <p style="margin: 0;">&copy; 2025 Mukhesh Ravi. All Rights Reserved.</p>
+
+    <!-- Navigation Links -->
+    <ul style="list-style: none; padding: 10px 0; margin: 0; display: inline-flex; gap: 15px;">
+      <li><a href="#home" style="color: #fff; text-decoration: none; transition: color 0.3s ease;">Home</a></li>
+      <li><a href="#about" style="color: #fff; text-decoration: none; transition: color 0.3s ease;">About</a></li>
+      <li><a href="#contact" style="color: #fff; text-decoration: none; transition: color 0.3s ease;">Contact</a></li>
+    </ul>
+
+    <!-- Social Media Icons -->
+    <div style="margin-top: 10px;">
+      <a href="https://facebook.com" class="social-icon" style="margin: 0 5px; color: #fff; text-decoration: none; font-size: 18px; transition: transform 0.3s ease, color 0.3s ease;">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="https://twitter.com" class="social-icon" style="margin: 0 5px; color: #fff; text-decoration: none; font-size: 18px; transition: transform 0.3s ease, color 0.3s ease;">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://linkedin.com" class="social-icon" style="margin: 0 5px; color: #fff; text-decoration: none; font-size: 18px; transition: transform 0.3s ease, color 0.3s ease;">
+        <i class="fab fa-linkedin"></i>
+      </a>
+    </div>
+
+    <!-- Back to Top Button -->
+    <a href="#top" style="display: inline-block; margin-top: 15px; color: #fff; text-decoration: none; font-size: 14px; transition: color 0.3s ease;">
+      Back to Top ↑
+    </a>
+  </div>
+</footer>
+
+<!-- Font Awesome Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+</body>
+</html>
+
+<!-- Include Bootstrap JavaScript -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
