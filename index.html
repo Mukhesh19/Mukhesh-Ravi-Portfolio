@@ -462,18 +462,41 @@
                   <h5 class="card-title">Project 6</h5>
                   <p class="card-text">A brief description of Project 6. Built using Angular and Bootstrap.</p>
                   <div class="d-flex justify-content-between">
-                    <a href="#" class="btn btn-outline-primary btn-sm">Research Question</a>
-                    <a href="#" class="btn btn-outline-secondary btn-sm">Repo</a>
-                  </div>
-                  <hr>
-                  <p class="mb-1"><strong>Languages:</strong> JavaScript: 70%, SCSS: 20%, HTML: 10%</p>
-                  <p class="mb-1"><strong>Updated:</strong> July 15, 2024</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+                     <button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#overviewModa6">Overview</button>
+        <a href="https://github.com/yourrepo/project1" class="btn btn-outline-secondary btn-sm">Repo</a>
       </div>
+      <hr>
+      <p class="mb-1"><strong>Languages:</strong> JavaScript: 50%, SCSS: 30%, HTML: 20%</p>
+      <p class="mb-1"><strong>Updated:</strong> December 24, 2024</p>
+    </div>
+  </div>
+</div>
+
+<!-- Overview Modal -->
+<div class="modal fade" id="overviewModal6" tabindex="-1" role="dialog" aria-labelledby="overviewModalLabel6" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="overviewModalLabel6">Project Overview</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <h6>Research Question</h6>
+        <p>What is the main research question?</p>
+        <h6>Findings</h6>
+        <p>What are the key findings?</p>
+        <h6>Results</h6>
+        <p>What are the results of the analysis?</p>
+        <!-- Add more sections as needed -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
       
       <!-- Carousel Controls -->
 <a class="carousel-control-prev text-dark" href="#projectCarousel" role="button" data-slide="prev" style="font-size: 2rem; left: -160px;">
