@@ -628,6 +628,35 @@
           </div>
         </div>
       </div>
+
+      <script>
+  // Function to handle tab switching
+  function openTab(event, tabId) {
+    const tabs = document.querySelectorAll('.tab');
+    const contents = document.querySelectorAll('.tab-content');
+
+    tabs.forEach(tab => tab.classList.remove('active'));
+    contents.forEach(content => content.classList.remove('active'));
+
+    event.currentTarget.classList.add('active');
+    document.getElementById(tabId).classList.add('active');
+  }
+
+  // Function to show skill description
+  function showDescription(skillDescription) {
+    const descriptionBox = document.getElementById('description-box');
+    descriptionBox.textContent = skillDescription;
+  }
+
+  // Add event listeners for the modals to pause/resume carousel
+  $('#overviewModal1, #overviewModal2').on('show.bs.modal', function () {
+    $('#projectCarousel').carousel('pause');
+  });
+
+  $('#overviewModal1, #overviewModal2').on('hidden.bs.modal', function () {
+    $('#projectCarousel').carousel('cycle');
+  });
+</script>
       
       <!-- Carousel Controls -->
 <a class="carousel-control-prev text-dark" href="#projectCarousel" role="button" data-slide="prev" style="font-size: 2rem; left: -160px;">
