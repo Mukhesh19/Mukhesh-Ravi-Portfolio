@@ -474,7 +474,7 @@
 </div>
 
 <!-- Modal for Enlarged Image -->
-<div id="imageModal" class="modal" tabindex="-1" role="dialog">
+<div id="imageModal" class="modal" tabindex="-1" role="dialog" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
@@ -497,11 +497,16 @@
     // Open the modal to display the enlarged image
     $('#imageModal').modal('show');
   }
+
+  // Ensure the modal close button works with jQuery
+  $(document).ready(function() {
+    $('#imageModal').on('hidden.bs.modal', function () {
+      document.getElementById("modalImage").src = ""; // Clear the image when closing
+    });
+  });
 </script>
 
-
-
-
+            
             <!-- Project Card 2 -->
 <div class="col-md-4">
   <div class="card">
