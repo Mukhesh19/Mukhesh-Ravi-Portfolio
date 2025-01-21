@@ -483,8 +483,9 @@
   }
 </style>
 
-            
+
             <!-- Project Card 2 -->
+      
 <div class="col-md-4">
   <div class="card">
     <img src="image2.jpg" class="card-img-top" alt="Project 2 Image">
@@ -504,83 +505,102 @@
 
 <!-- Overview Modal 2 -->
 <div class="modal fade" id="overviewModal2" tabindex="-1" role="dialog" aria-labelledby="overviewModalLabel2" aria-hidden="true">
-  <div class="modal-dialog" role="document">
+  <div class="modal-dialog modal-lg" role="document">
     <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="overviewModalLabel2">Project Overview</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <div class="modal-header" style="background: linear-gradient(90deg, #ff9a9e, #fad0c4); padding: 20px; border-radius: 10px; text-align: center; color: white;">
+        <h2 style="margin: 0;">Forecasting Demand in Retail: Leveraging Advanced Machine Learning Techniques for Inventory Management</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white;">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
       <div class="modal-body">
-        <header style="background: linear-gradient(90deg, #ff9a9e, #fad0c4); padding: 20px; border-radius: 10px; text-align: center; color: white;">
-          <h2 style="margin: 0;">🌟 Optimizing Recruitment 🌟</h2>
-          <p style="margin: 0; font-size: 16px;">Leveraging Machine Learning for Smarter Hiring Decisions</p>
-        </header>
+        <div style="margin: 20px 0;">
+          <h6 style="font-size: 18px; border-bottom: 2px solid #ccc; padding-bottom: 5px;">Problem Statement</h6>
+          <p style="text-align: center;">This research leverages advanced machine learning models to optimize demand forecasting in retail by achieving high accuracy, efficiency, and customer satisfaction.</p>
+        </div>
 
-        <section style="margin: 20px 0;">
-          <h3 style="font-size: 20px; color: #ff6f61;">🔍 Key Findings</h3>
+        <div style="margin: 20px 0;">
+          <h6 style="font-size: 18px; border-bottom: 2px solid #ccc; padding-bottom: 5px;">Key Findings</h6>
           <div style="display: flex; align-items: flex-start; gap: 20px;">
-            <div style="flex: 1;">
-              <ul style="list-style: none; padding: 0; font-size: 16px;">
-                <li>💡 <strong>Top Model:</strong> CatBoost with 95% accuracy</li>
-                <li>💡 <strong>Influential Features:</strong>
-                  <ul style="margin-left: 20px; list-style-type: circle;">
-                    <li>Recruitment Strategy</li>
-                    <li>Education Level</li>
-                    <li>Personality Score</li>
+            <div style="flex: 2;">
+              <ul style="list-style: none; padding: 0;">
+                <li><strong>Top Model:</strong> XGBoost with RMSE score of 527.98 after hyperparameter tuning.</li>
+                <li><strong>Influential Features:</strong> Time Series Patterns, Sales Data, & Seasonal Variations.</li>
+                <li><strong>Practical Benefits:</strong>
+                  <ul style="margin-left: 20px;">
+                    <li>Optimized inventory management.</li>
+                    <li>Cost reduction and efficient resource allocation.</li>
+                    <li>Enhanced customer satisfaction and data-driven decision making.</li>
                   </ul>
                 </li>
               </ul>
             </div>
-            <div style="flex: 1; text-align: center;">
-              <img src="Accuracy-Scores.png" alt="Accuracy Chart" style="max-width: 100%; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+            <div style="flex: 1; text-align: right;">
+              <img src="image1.png" alt="Graph 1" class="hover-enlarge" style="max-width: 100%; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
             </div>
           </div>
-        </section>
+        </div>
 
+        <div style="margin: 20px 0;">
+          <h6 style="font-size: 18px; border-bottom: 2px solid #ccc; padding-bottom: 5px;">Tools and Techniques</h6>
+          <table style="width: 100%; border-collapse: collapse;">
+            <tr style="background-color: #f9f9f9;">
+              <td style="padding: 8px; border: 1px solid #ddd;">Programming Language</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">Python</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;">Development Environment</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">Visual Studio Code</td>
+            </tr>
+            <tr style="background-color: #f9f9f9;">
+              <td style="padding: 8px; border: 1px solid #ddd;">Libraries & Frameworks</td>
+              <td style="padding: 8px; border: 1px solid #ddd;"> Scikit-learn, Pandas, NumPy, Matplotlib, Seaborn, XGBoost, CatBoost, LightGBM, ARIMA, RandomSearch etc</td>
+            </tr>
+            <tr>
+              <td style="padding: 8px; border: 1px solid #ddd;">Models Used</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">XGBoost, CatBoost, LSTM, SARIMA, ARIMA, Exponential Smoothing, Random Forest, SVM</td>
+            </tr>
+            <tr style="background-color: #f9f9f9;">
+              <td style="padding: 8px; border: 1px solid #ddd;">Evaluation Metrics</td>
+              <td style="padding: 8px; border: 1px solid #ddd;">Root Mean Squared Error (RMSE), Mean Absolute Error (MAE)</td>
+            </tr>
+          </table>
+        </div>
+
+        <div style="margin: 20px 0;">
+          <h6 style="font-size: 18px; border-bottom: 2px solid #ccc; padding-bottom: 5px;">Methodology</h6>
+          <ol>
+            <li>Data Cleaning: Handled missing values, removed duplicates.</li>
+            <li>Data Preprocessing: Converted data types, handled outliers, dropped unnecessary columns.</li>
+            <li>EDA: Visualized distributions, identified correlations.</li>
+            <li>Hyperparameter Tuning: GridSearchCV and RandomSearchCV.</li>
+            <li>Feature Engineering: Enhanced interpretability with key features.</li>
+          </ol>
+        </div>
+
+        <div style="margin: 20px 0;">
+          <h6 style="font-size: 18px; border-bottom: 2px solid #ccc; padding-bottom: 5px;">Impact</h6>
+          <ul style="list-style-type: square;">
+            <li><strong>Efficiency:</strong>  Optimized inventory management and resource allocation.</li>
+            <li><strong>Customer Satisfaction:</strong> Enhanced by accurate demand forecasting.</li>
+            <li><strong>Scalability:</strong> Potential for cross-industry application.</li>
+          </ul>
+        </div>
+
+        <div style="margin: 20px 0;">
+          <h6 style="font-size: 18px; border-bottom: 2px solid #ccc; padding-bottom: 5px;">Limitations & Future Work</h6>
+          <p><strong>Dataset Size:</strong> Limited to 8000 candidates.</p>
+          <p><strong>Future Scope:</strong> Incorporating external data, hybrid models, real-time forecasting.</p>
+        </div>
+
+        <!-- Graphs Section -->
         <section style="margin: 20px 0;">
-          <h3 style="font-size: 20px; color: #ff6f61;">🛠️ Tools & Techniques</h3>
-          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px;">
-            <div style="background: #fff3e0; padding: 15px; border-radius: 10px; text-align: center;">
-              <strong>🔧 Programming:</strong>
-              <p style="margin: 0;">Python</p>
-            </div>
-            <div style="background: #fff3e0; padding: 15px; border-radius: 10px; text-align: center;">
-              <strong>💻 Environment:</strong>
-              <p style="margin: 0;">Visual Studio Code</p>
-            </div>
-            <div style="background: #fff3e0; padding: 15px; border-radius: 10px; text-align: center;">
-              <strong>📚 Libraries:</strong>
-              <p style="margin: 0;">Scikit-learn, Pandas, CatBoost</p>
-            </div>
+          <h6 style="font-size: 18px; border-bottom: 2px solid #ccc; padding-bottom: 5px;">Visual Insights</h6>
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 15px;">
+            <img src="image2.png" alt="Graph 2" class="hover-enlarge" style="max-width: 100%; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+            <img src="image3.png" alt="Graph 3" class="hover-enlarge" style="max-width: 100%; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
+            <img src="image4.png" alt="Graph 4" class="hover-enlarge" style="max-width: 100%; border-radius: 10px; box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);">
           </div>
-        </section>
-
-        <section style="margin: 20px 0;">
-          <h3 style="font-size: 20px; color: #ff6f61;">📋 Methodology</h3>
-          <ul style="list-style-type: square; font-size: 16px; padding-left: 20px;">
-            <li>🧹 <strong>Data Cleaning:</strong> Addressed missing values and duplicates.</li>
-            <li>🔄 <strong>Data Preprocessing:</strong> Converted variables and handled imbalances.</li>
-            <li>📊 <strong>EDA:</strong> Visualized distributions and correlations.</li>
-            <li>⚙️ <strong>Hyperparameter Tuning:</strong> Optimized with GridSearchCV.</li>
-            <li>🔍 <strong>Feature Engineering:</strong> Identified and enhanced key features.</li>
-          </ul>
-        </section>
-
-        <section style="margin: 20px 0;">
-          <h3 style="font-size: 20px; color: #ff6f61;">🌟 Impact</h3>
-          <ul style="list-style-type: disc; font-size: 16px; padding-left: 20px;">
-            <li>⏱️ <strong>Efficiency:</strong> Reduced manual screening time for HR teams.</li>
-            <li>🤝 <strong>Fairness:</strong> Promoted unbiased hiring decisions.</li>
-            <li>📈 <strong>Scalability:</strong> Adaptable across various industries.</li>
-          </ul>
-        </section>
-
-        <section style="margin: 20px 0;">
-          <h3 style="font-size: 20px; color: #ff6f61;">🚀 Limitations & Future Work</h3>
-          <p>❌ <strong>Limitations:</strong> Dataset limited to 1,500 candidates.</p>
-          <p>🔮 <strong>Future Scope:</strong> Explore deep learning and real-world deployment.</p>
         </section>
       </div>
       <div class="modal-footer">
@@ -589,6 +609,17 @@
     </div>
   </div>
 </div>
+
+<!-- CSS for Hover Effect -->
+<style>
+  .hover-enlarge {
+    transition: transform 0.3s ease;
+  }
+  .hover-enlarge:hover {
+    transform: scale(1.5);
+  }
+</style>
+
             <!-- Project Card 3 -->
             <div class="col-md-4">
               <div class="card">
