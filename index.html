@@ -642,23 +642,89 @@
         <!-- Second Set of 3 Cards -->
         <div class="carousel-item">
           <div class="row">
+
             <!-- Project Card 4 -->
-            <div class="col-md-4">
-              <div class="card">
-               <img src="computervision.png" class="card-img-top" alt="Project 4 Image">
-                <div class="card-body">
-                  <h5 class="card-title">Project 4</h5>
-                  <p class="card-text">A brief description of Project 4. Built using Flask and Bootstrap.</p>
-                  <div class="d-flex justify-content-between">
-                    <a href="#" class="btn btn-outline-primary btn-sm">Overview</a>
-                    <a href="#" class="btn btn-outline-secondary btn-sm">Repo</a>
-                  </div>
-                  <hr>
-                  <p class="mb-1"><strong>Languages:</strong> Python: 70%, HTML: 30%</p>
-                  <p class="mb-1"><strong>Updated:</strong> September 10, 2024</p>
-                </div>
-              </div>
-            </div>
+<div class="col-md-4">
+  <div class="card">
+    <img src="computervision.png" class="card-img-top" alt="Project 3 Image">
+    <div class="card-body">
+      <h5 class="card-title">Tesla’s Autopilot: A Critical Look on its Formation, Components, Challenges and Future Directions.</h5>
+      <p class="card-text">Developed a camera-based traffic sign detection system inspired by Tesla's Autopilot, leveraging AI to recognize and respond to road signs in real time.</p>
+      <div class="d-flex justify-content-between">
+        <button class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#overviewModal4">Overview</button>
+        <a href="https://github.com/yourusername/yourrepository" class="btn btn-outline-secondary btn-sm">Repo</a>
+      </div>
+      <hr>
+      <p class="mb-1"><strong>Languages:</strong> Python: 100%</p>
+      <p class="mb-1"><strong>Updated:</strong> October 15, 2024</p>
+    </div>
+  </div>
+</div>
+
+<!-- Simple and Clean Overview Modal -->
+<div class="modal fade" id="overviewModal4" tabindex="-1" role="dialog" aria-labelledby="overviewModal4" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content" style="border-radius: 0; overflow: hidden;">
+      <div class="modal-header" style="background: linear-gradient(90deg, #2b5876, #4e4376); padding: 25px; color: white; text-align: center;">
+        <h2 style="margin: 0 auto;">Traffic Sign Detection System Using CNNs</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="color: white;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="padding: 0; background-color: #f4f6f9;">
+        <!-- Section 1: Overview -->
+        <div style="padding: 30px; background-color: #ffffff;">
+          <h3 style="border-bottom: 2px solid #4e4376; padding-bottom: 10px;">Overview</h3>
+          <p>
+            This project implements a real-time traffic sign detection system inspired by Tesla’s computer vision capabilities, simulating key features of advanced driver-assistance systems (ADAS). Built using Python and deep learning libraries, the project demonstrates how image classification models can identify and respond to traffic signs in real-world scenarios.
+          </p>
+        </div>
+
+        <!-- Section 2: Objectives -->
+        <div style="padding: 30px; background-color: #f9fbfd;">
+          <h3 style="border-bottom: 2px solid #2b5876; padding-bottom: 10px;">Objectives</h3>
+          <ul>
+            <li>Design a system that uses computer vision to detect and classify traffic signs, such as "Stop," "Go Forward," and "Turn Right."</li>
+            <li>Integrate a live webcam feed for real-time detection and response simulation.</li>
+            <li>Explore machine learning techniques such as Convolutional Neural Networks (CNNs) to achieve high accuracy in traffic sign recognition.</li>
+          </ul>
+        </div>
+
+        <!-- Section 3: Images -->
+        <div style="padding: 30px; background-color: #ffffff;">
+          <h3 style="border-bottom: 2px solid #4e4376; padding-bottom: 10px;">Visuals</h3>
+          <div style="display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap;">
+            <img src="image1.jpg" alt="Model Architecture" style="width: 32%; border-radius: 5px;">
+            <img src="image2.jpg" alt="Real-Time Detection Output" style="width: 32%; border-radius: 5px;">
+            <img src="image3.jpg" alt="System Response to Stop Sign" style="width: 32%; border-radius: 5px;">
+          </div>
+        </div>
+
+        <!-- Section 4: Challenges -->
+        <div style="padding: 30px; background-color: #f9fbfd;">
+          <h3 style="border-bottom: 2px solid #2b5876; padding-bottom: 10px;">Challenges and Solutions</h3>
+          <ul>
+            <li><strong>Environmental Variability:</strong> Managed inconsistent lighting and angles by augmenting the training data with variations such as brightness, rotation, and noise.</li>
+            <li><strong>False Positives in Classification:</strong> Improved accuracy by optimizing hyperparameters, fine-tuning the model, and increasing dataset diversity.</li>
+            <li><strong>Latency in Real-Time Processing:</strong> Streamlined the detection pipeline and used optimized libraries like OpenCV for real-time performance.</li>
+          </ul>
+        </div>
+
+        <!-- Section 5: Applications -->
+        <div style="padding: 30px; background-color: #ffffff;">
+          <h3 style="border-bottom: 2px solid #4e4376; padding-bottom: 10px;">Applications and Impacts</h3>
+          <p>
+            This system highlights how computer vision and machine learning can enhance autonomous driving technologies. It demonstrates a scalable solution that can be expanded to include additional sign types, integrated with vehicle sensors, or adapted for smart city traffic management.
+          </p>
+        </div>
+      </div>
+      <div class="modal-footer" style="background-color: #eaeef3; border-top: 1px solid #d3d7db; padding: 15px;">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal" style="border-radius: 5px;">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+
             <!-- Project Card 5 -->
             <div class="col-md-4">
               <div class="card">
